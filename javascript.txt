@@ -1,0 +1,25 @@
+// Wait until page loads
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Select all View Details buttons
+    const buttons = document.querySelectorAll(".course-card button");
+
+    // Course details object
+    const courseDetails = {
+        "HTML & CSS": "HTML & CSS:\nDuration: 2 Months\nLevel: Beginner\nBuild modern websites.",
+        "JavaScript": "JavaScript:\nDuration: 2.5 Months\nLevel: Beginner to Intermediate\nMake websites interactive.",
+        "Python": "Python:\nDuration: 3 Months\nLevel: Beginner\nBest for programming fundamentals.",
+        "React.js": "React.js:\nDuration: 2 Months\nLevel: Intermediate\nBuild modern web apps.",
+        "Data Science": "Data Science:\nDuration: 4 Months\nLevel: Intermediate\nWork with data & analytics.",
+        "Full Stack Development": "Full Stack:\nDuration: 6 Months\nLevel: Advanced\nFrontend + Backend development."
+    };
+
+    // Add click event to each button
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            const courseName = this.previousElementSibling.previousElementSibling.innerText;
+            alert(courseDetails[courseName]);
+        });
+    });
+
+});
